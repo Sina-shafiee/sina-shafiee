@@ -1,5 +1,35 @@
+import { Route, Routes } from 'react-router';
+
+// styled component theme provider global styles and theme checker
+import Theme from './Theme';
+import { GlobalStyles } from './styles/globals';
+import checkTheme from './utils/checkTheme';
+
+// pages components
+import { About, Contact, Home, Projects, Project, NotFound } from './pages';
+// app styles state hook
+import useAppContext from './hooks/use-appContext';
+// header component
+import Header from './components/Header';
+
 const App = () => {
-  return <div>App</div>;
+  const { state } = useAppContext();
+  const colors = checkTheme(state);
+
+  return (
+    <Theme colors={colors}>
+      <GlobalStyles />
+      <Header />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/projects' element={<Projects />} />
+        <Route path='/project/:id' element={<Project />} />
+        <Route path='*' element={<NotFound />} />
+      </Routes>
+    </Theme>
+  );
 };
 
 export default App;
