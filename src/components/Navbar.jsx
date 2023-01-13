@@ -25,7 +25,7 @@ const Navbar = () => {
                 }
                 to={url}
               >
-                {title}
+                {title.toUpperCase()}
               </NavLink>
             </li>
           );
@@ -55,7 +55,7 @@ const Nav = styled.nav`
     & > li {
       padding: 7px 20px;
       font-weight: 700;
-      font-size: 0.9em;
+      font-size: 0.8em;
 
       &:hover {
         color: ${({ theme: { colors } }) => colors.primary};

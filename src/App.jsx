@@ -10,8 +10,7 @@ import { About, Contact, Home, Projects, Project, NotFound } from './pages';
 // app styles state hook
 import useAppContext from './hooks/use-appContext';
 // header component
-import Header from './components/Header';
-import Footer from './components/Footer';
+import { Header, Footer } from './components';
 
 const App = () => {
   const { state } = useAppContext();

@@ -1,7 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 
-import bodyBg from '../assets/images/body-bg.png';
-
 // global styles
 // linked normalized.css v8 to html
 export const GlobalStyles = createGlobalStyle`

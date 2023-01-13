@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { CiDark, CiLight } from 'react-icons/ci';
 import { NavLink } from 'react-router-dom';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 import data from '../data';
 import useAppContext from '../hooks/use-appContext';
@@ -16,7 +16,7 @@ const MobileNav = () => {
   } = useAppContext();
 
   const handleClose = (e) => {
-    if (NavRef.current.contains(e.target)) {
+    if (NavRef.current.contains(e.target) || e.target.nodeName === 'svg') {
       return;
     }
 
@@ -24,7 +24,7 @@ const MobileNav = () => {
   };
 
   useEffect(() => {
-    document.body.addEventListener('click', handleClose, { capture: true });
+    document.body.addEventListener('click', handleClose, { capture: false });
 
     return () => {
       document.body.removeEventListener('click', handleClose, {
@@ -45,7 +45,7 @@ const MobileNav = () => {
                 }
                 to={url}
               >
-                {title}
+                {title.toUpperCase()}
               </NavLink>
             </li>
           );
@@ -70,10 +70,11 @@ const Nav = styled.nav`
   right: 0;
   width: 100%;
   transition: transform 0.4s ease-out;
-  transform: ${({ isOpen }) => (isOpen ? null : 'translateX(400px)')};
-  backdrop-filter: blur(20px);
+  display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
+  background-color: ${({ theme: { colors } }) => colors.bodyBg};
+
   min-height: 100vh;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   justify-content: space-between;
   max-width: 300px;

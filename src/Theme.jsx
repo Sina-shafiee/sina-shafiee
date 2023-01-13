@@ -2,14 +2,14 @@ import { ThemeProvider } from 'styled-components';
 
 // light mode theme
 export const lightTheme = {
-  bodyBg: '#EFFFFD',
+  bodyBg: '#FEFEFE',
   text: '#363537',
   primary: '#8E05C2'
 };
 
 // dark mode theme
 export const darkTheme = {
-  bodyBg: '#180A0A',
+  bodyBg: '#191919',
   text: '#FAFAFA',
   primary: '#1182FF'
 };
@@ -26,12 +26,7 @@ const Theme = ({ children, colors }) => {
     },
     colors
   };
-  return (
-    <ThemeProvider theme={theme}>
-      {children}
-      {console.log(theme)}
-    </ThemeProvider>
-  );
+  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 };
 
 export default Theme;

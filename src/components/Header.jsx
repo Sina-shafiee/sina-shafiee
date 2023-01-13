@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { HiOutlineMenuAlt3 } from 'react-icons/hi';
 
 import Navbar from './Navbar';
@@ -17,7 +17,7 @@ const Header = () => {
   const [showBackground, setShowBackground] = useState(false);
 
   const handleScroll = () => {
-    if (window.scrollY > 150) {
+    if (window.scrollY > 200) {
       setShowBackground(true);
     } else {
       setShowBackground(false);
@@ -65,15 +65,22 @@ const Header = () => {
 };
 
 export default Header;
+const headerPos = keyframes`
+ 0% {transform: translateY(-80px);}
+ 100% {transform: translateY(0);}
+`;
 
 const StyledHeader = styled.header`
   margin-top: 1rem;
   padding: 1rem 0;
-  transition: background 0.2s linear;
+
+  /* transition: background 0.2s linear, transform 0.4s linear; */
 
   ${({ bg }) =>
     bg &&
     css`
+      animation: ${headerPos} 0.2s linear;
+      transform: translateY(0);
       position: sticky;
       top: 0;
       left: 0;
@@ -83,7 +90,8 @@ const StyledHeader = styled.header`
 `;
 
 const ToggleBtn = styled(Button)`
-  font-size: 1.7em;
+  font-size: 1.9em;
+  padding: 0;
 
   @media (min-width: ${({ theme: { breakPoints } }) => breakPoints.md}) {
     display: none;

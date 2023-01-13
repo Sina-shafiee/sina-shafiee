@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   max-width: 480px;
   margin: 0 auto;
-  padding: 0 0.5rem;
+  padding: 0 1rem;
 
   @media (min-width: ${({ theme: { breakPoints } }) => breakPoints.sm}) {
     max-width: ${({ theme: { breakPoints } }) => breakPoints.sm};
