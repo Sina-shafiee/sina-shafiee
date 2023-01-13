@@ -3,7 +3,7 @@ import { Container } from '../components/styled/Container.styled';
 const Home = () => {
   return (
     <Container>
-      <p>
+      <p style={{ margin: '4rem 0', textAlign: 'justify' }}>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa sint
         cumque corporis quos porro repellat modi similique nemo vel excepturi a,
         magni quo omnis totam eum hic molestias, ullam, minus odit explicabo.

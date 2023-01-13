@@ -11,7 +11,7 @@ export const lightTheme = {
 export const darkTheme = {
   bodyBg: '#180A0A',
   text: '#FAFAFA',
-  primary: '#42C2FF'
+  primary: '#1182FF'
 };
 
 // theme provider

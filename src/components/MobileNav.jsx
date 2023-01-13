@@ -103,7 +103,7 @@ const ToggleContainer = styled.div`
     position: relative;
     margin: 0 auto;
     width: 100px;
-    height: 1rem;
+    height: 2.5rem;
     overflow: hidden;
     border-radius: 8px;
     padding: 0.8rem;
@@ -118,6 +118,6 @@ const Toggle = styled.div`
   cursor: pointer;
   top: 5px;
   left: 5px;
-  transform: ${({ dark }) => (dark ? 'translateX(80px)' : null)};
+  transform: ${({ dark }) => (dark ? 'translateX(60px)' : null)};
   transition: all 0.4s ease-out;
 `;

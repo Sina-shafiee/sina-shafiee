@@ -6,8 +6,10 @@ import Navbar from './Navbar';
 import MobileNav from './MobileNav';
 
 import { Container } from './styled/Container.styled';
+import { LogoContainer } from './styled/LogoContainer.styled';
 import { Flex } from './styled/flex.styled';
 import { Button } from './styled/Button.styled';
+
 import useAppContext from '../hooks/use-appContext';
 
 const Header = () => {
@@ -15,7 +17,7 @@ const Header = () => {
   const [showBackground, setShowBackground] = useState(false);
 
   const handleScroll = () => {
-    if (window.scrollY > 50) {
+    if (window.scrollY > 150) {
       setShowBackground(true);
     } else {
       setShowBackground(false);
@@ -34,7 +36,7 @@ const Header = () => {
     <StyledHeader bg={showBackground}>
       <Container>
         <Flex align='center' justify='space-between'>
-          <Logo>
+          <LogoContainer>
             <svg
               viewBox='0 0 41 41'
               fill='none'
@@ -45,7 +47,7 @@ const Header = () => {
               </g>
             </svg>
             <h1>ALI SINA</h1>
-          </Logo>
+          </LogoContainer>
           <Navbar />
           <ToggleBtn
             onClick={(e) => {
@@ -65,9 +67,9 @@ const Header = () => {
 export default Header;
 
 const StyledHeader = styled.header`
-  margin-top: 1em;
-  padding: 0.5rem 0;
-  transition: background 0.4s linear;
+  margin-top: 1rem;
+  padding: 1rem 0;
+  transition: background 0.2s linear;
 
   ${({ bg }) =>
     bg &&
@@ -78,22 +80,6 @@ const StyledHeader = styled.header`
       background-color: ${({ theme: { colors } }) => colors.bodyBg};
       box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 4px;
     `}
-`;
-
-const Logo = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  h1 {
-    font-size: 1.2em;
-    font-weight: 700;
-    white-space: nowrap;
-  }
-  svg {
-    width: 1.6em;
-    fill: ${({ theme: { colors } }) => colors.text};
-  }
 `;
 
 const ToggleBtn = styled(Button)`

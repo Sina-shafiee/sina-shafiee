@@ -1,10 +1,18 @@
 import { createGlobalStyle } from 'styled-components';
 
+import bodyBg from '../assets/images/body-bg.png';
+
 // global styles
 // linked normalized.css v8 to html
 export const GlobalStyles = createGlobalStyle`
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
   body {
-    background: ${({ theme: { colors } }) => colors.bodyBg};
+    background-color: ${({ theme: { colors } }) => colors.bodyBg};
     color: ${({ theme: { colors } }) => colors.text};
     font-family:  "Roboto", sans-serif;
     font-size: 1rem;
