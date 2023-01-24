@@ -10,12 +10,15 @@ import { AboutUs, Contact, Home, Projects, Project, NotFound } from './pages';
 // app styles state hook
 import useAppContext from './hooks/use-appContext';
 // header component
-import { Header, Footer } from './components';
+
 import Dashboard from './pages/dashboard/Dashboard';
-import Login from './pages/dashboard/Login';
-import AddProject from './pages/dashboard/AddProject';
+import Login from './pages/Login';
 import DashboardHome from './pages/dashboard/DashboardHome';
 import ProtectedRoute from './pages/ProtectedRoute';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import DashboardProjects from './pages/dashboard/DashboardProjects';
+import DashboardProfile from './pages/dashboard/DashboardProfile';
 
 const App = () => {
   const { state } = useAppContext();
@@ -24,7 +27,6 @@ const App = () => {
   return (
     <Theme colors={colors}>
       <GlobalStyles />
-      <Header />
       <Routes>
         <Route index element={<Home />} />
         <Route path='contact' element={<Contact />} />
@@ -34,13 +36,21 @@ const App = () => {
         <Route path='dashboard' element={<Dashboard />}>
           <Route element={<ProtectedRoute />}>
             <Route index element={<DashboardHome />} />
-            <Route path='add-project' element={<AddProject />} />
+            <Route path='profile' element={<DashboardProfile />} />
+            <Route path='projects' element={<DashboardProjects />} />
           </Route>
-          <Route path='login' element={<Login />} />
         </Route>
+        <Route path='login' element={<Login />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
-      <Footer />
+      <ToastContainer
+        position='bottom-center'
+        autoClose={3000}
+        hideProgressBar={true}
+        newestOnTop={true}
+        closeOnClick
+        theme={state.theme}
+      />
     </Theme>
   );
 };

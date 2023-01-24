@@ -1,5 +1,13 @@
+import { Header, Footer } from '../components';
+
 const Contact = () => {
-  return <div>Contact</div>;
+  return (
+    <>
+      <Header />
+      <div>Contact</div>;
+      <Footer />
+    </>
+  );
 };
 
 export default Contact;

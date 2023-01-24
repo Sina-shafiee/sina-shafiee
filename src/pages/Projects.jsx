@@ -1,5 +1,13 @@
+import { Header, Footer } from '../components';
+
 const Projects = () => {
-  return <div>Projects</div>;
+  return (
+    <>
+      <Header />
+      <div>Projects</div>;
+      <Footer />
+    </>
+  );
 };
 
 export default Projects;

@@ -73,6 +73,7 @@ const headerPos = keyframes`
 const StyledHeader = styled.header`
   margin-top: 1rem;
   padding: 1rem 0;
+  z-index: 50;
 
   ${({ bg }) =>
     bg &&

@@ -4,14 +4,16 @@ import { ThemeProvider } from 'styled-components';
 export const lightTheme = {
   bodyBg: '#FEFEFE',
   text: '#363537',
-  primary: '#8E05C2'
+  primary: '#8E05C2',
+  sideBarBg: '#f5f5f5'
 };
 
 // dark mode theme
 export const darkTheme = {
   bodyBg: '#191919',
   text: '#FAFAFA',
-  primary: '#6b53e7'
+  primary: '#0096FF',
+  sideBarBg: '#1f1f22'
 };
 
 // theme provider

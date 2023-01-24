@@ -73,7 +73,7 @@ const Hi = styled.div`
 `;
 
 const Line = styled.div`
-  width: 100%;
+  width: 70%;
   height: 2px;
   max-width: 300px;
   background-color: ${({ theme: { colors } }) => colors.text};

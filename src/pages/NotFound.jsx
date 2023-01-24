@@ -1,5 +1,12 @@
+import { Header, Footer } from '../components';
 const NotFound = () => {
-  return <div>NotFound</div>;
+  return (
+    <>
+      <Header />
+      <div>NotFound</div>;
+      <Footer />
+    </>
+  );
 };
 
 export default NotFound;

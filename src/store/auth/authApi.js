@@ -1,9 +1,15 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import pause from '../../utils/pause';
 
-export const authApi = createApi({
-  reducerPath: 'authApi',
+export const userApi = createApi({
+  reducerPath: 'userApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://portfolio-backend-ten-iota.vercel.app/api/auth'
+    baseUrl: 'https://portfolio-backend-ten-iota.vercel.app/api/auth',
+    fetchFn: async (...args) => {
+      // dev only
+      await pause(2000);
+      return fetch(...args);
+    }
   }),
   endpoints: (builder) => ({
     login: builder.mutation({
@@ -22,4 +28,4 @@ export const authApi = createApi({
   })
 });
 
-export const { useLoginMutation } = authApi;
+export const { useLoginMutation } = userApi;
