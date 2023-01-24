@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import { BrowserRouter as Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { store } from './store/index';
 
 import App from './App';
 // app style's state context
@@ -11,10 +13,12 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    <AppState>
-      <Router>
-        <App />
-      </Router>
-    </AppState>
+    <Provider store={store}>
+      <AppState>
+        <Router>
+          <App />
+        </Router>
+      </AppState>
+    </Provider>
   </React.StrictMode>
 );

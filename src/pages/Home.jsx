@@ -1,10 +1,9 @@
-import { Hero } from '../components';
-import { Container } from '../components/styled/Container.styled';
-
+import { About, Hero } from '../components';
 const Home = () => {
   return (
     <>
       <Hero />
+      <About />
     </>
   );
 };

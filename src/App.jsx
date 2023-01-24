@@ -6,26 +6,42 @@ import { GlobalStyles } from './styles/Globals';
 import checkTheme from './utils/checkTheme';
 
 // pages components
-import { About, Contact, Home, Projects, Project, NotFound } from './pages';
+import { AboutUs, Contact, Home, Projects, Project, NotFound } from './pages';
 // app styles state hook
 import useAppContext from './hooks/use-appContext';
 // header component
 import { Header, Footer } from './components';
+import Dashboard from './pages/dashboard/Dashboard';
+import Login from './pages/Login';
+import AddProject from './pages/dashboard/AddProject';
+import DashboardHome from './pages/dashboard/DashboardHome';
+import ProtectedRoute from './pages/ProtectedRoute';
+import { useSelector } from 'react-redux';
 
 const App = () => {
+  const user = useSelector((state) => state.user);
   const { state } = useAppContext();
   const colors = checkTheme(state);
+
+  console.log(user);
 
   return (
     <Theme colors={colors}>
       <GlobalStyles />
       <Header />
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/projects' element={<Projects />} />
-        <Route path='/project/:id' element={<Project />} />
+        <Route index element={<Home />} />
+        <Route path='contact' element={<Contact />} />
+        <Route path='about' element={<AboutUs />} />
+        <Route path='projects' element={<Projects />} />
+        <Route path='project/:id' element={<Project />} />
+        <Route path='dashboard' element={<Dashboard />}>
+          <Route element={<ProtectedRoute />}>
+            <Route index element={<DashboardHome />} />
+            <Route path='add-project' element={<AddProject />} />
+          </Route>
+          <Route path='login' element={<Login />} />
+        </Route>
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />

@@ -39,7 +39,7 @@ const StyledHero = styled.section`
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap-reverse;
-  margin: 4rem 0;
+  margin: 5rem 0;
   gap: 1rem;
 `;
 
@@ -81,16 +81,19 @@ const Line = styled.div`
 
 const Name = styled.h1`
   font-size: 1.7em;
+  display: flex;
+  gap: 6px;
 
   & > span {
     color: ${({ theme: { colors } }) => colors.primary};
+    white-space: nowrap;
   }
 
   @media (min-width: ${({ theme: { breakPoints } }) => breakPoints.sm}) {
     font-size: 2em;
   }
   @media (min-width: ${({ theme: { breakPoints } }) => breakPoints.xl}) {
-    font-size: 2.4em;
+    font-size: 2.2em;
   }
 `;
 const Job = styled.h2`

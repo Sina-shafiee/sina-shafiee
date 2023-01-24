@@ -47,7 +47,7 @@ const Footer = () => {
           <FaLinkedin />
           <FaFacebook />
         </SocialContainer>
-        <CopyRight>Copyright ©2023 All rights reserved</CopyRight>
+        <CopyRight>Copyright under MIT license 2023</CopyRight>
       </FooterBottom>
     </StyledFooter>
   );
