@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const authApi = createApi({
   reducerPath: 'authApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://portfolio-backend-ten-iota.vercel.app/api/auth/'
+    baseUrl: 'https://portfolio-backend-ten-iota.vercel.app/api/auth'
   }),
   endpoints: (builder) => ({
     login: builder.mutation({

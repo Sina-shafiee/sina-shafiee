@@ -5,4 +5,5 @@ export const Flex = styled.div`
   align-items: ${({ align }) => align || 'flex-start'};
   justify-content: ${({ justify }) => justify || 'flex-start'};
   gap: ${({ gap }) => gap || '0px'};
+  flex-direction: ${({ dir }) => (dir ? dir : 'row')};
 `;

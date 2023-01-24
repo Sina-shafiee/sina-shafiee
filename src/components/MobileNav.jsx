@@ -69,6 +69,7 @@ const Nav = styled.nav`
   top: 0;
   right: 0;
   width: 100%;
+  z-index: 50;
   transition: transform 0.4s ease-out;
   display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
   background-color: ${({ theme: { colors } }) => colors.bodyBg};

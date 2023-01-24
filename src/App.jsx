@@ -12,18 +12,14 @@ import useAppContext from './hooks/use-appContext';
 // header component
 import { Header, Footer } from './components';
 import Dashboard from './pages/dashboard/Dashboard';
-import Login from './pages/Login';
+import Login from './pages/dashboard/Login';
 import AddProject from './pages/dashboard/AddProject';
 import DashboardHome from './pages/dashboard/DashboardHome';
 import ProtectedRoute from './pages/ProtectedRoute';
-import { useSelector } from 'react-redux';
 
 const App = () => {
-  const user = useSelector((state) => state.user);
   const { state } = useAppContext();
   const colors = checkTheme(state);
-
-  console.log(user);
 
   return (
     <Theme colors={colors}>
