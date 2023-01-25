@@ -7,7 +7,7 @@ export const userApi = createApi({
     baseUrl: 'https://portfolio-backend-ten-iota.vercel.app/api/auth',
     fetchFn: async (...args) => {
       // dev only
-      await pause(2000);
+      // await pause(2000);
       return fetch(...args);
     }
   }),
@@ -24,8 +24,23 @@ export const userApi = createApi({
           })
         };
       }
+    }),
+    updateUser: builder.mutation({
+      query: ({ name, token }) => {
+        return {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json'
+          },
+          url: '/update',
+          method: 'PATCH',
+          body: JSON.stringify({
+            name
+          })
+        };
+      }
     })
   })
 });
 
-export const { useLoginMutation } = userApi;
+export const { useLoginMutation, useUpdateUserMutation } = userApi;

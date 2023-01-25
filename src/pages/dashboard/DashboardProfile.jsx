@@ -1,26 +1,55 @@
+import { useEffect } from 'react';
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 import styled from 'styled-components';
 import Avatar from '../../assets/images/avatar.svg';
 import { Button } from '../../components/styled/Button.styled';
+import { useUpdateUserMutation } from '../../store/auth/authApi';
+import { updateUser } from '../../store/auth/authSlice';
 
 const DashboardProfile = () => {
-  const user = useSelector((state) => state.user.user.data);
+  const { data: user, token } = useSelector((state) => state.user.user);
   const [formData, setFormData] = useState({
     email: user.email || '',
     name: user.name || ''
   });
 
+  const dispatch = useDispatch();
+
   const { email, name } = formData;
+  const [update, result] = useUpdateUserMutation();
 
   const handleInputChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (name && name.length > 5) {
+      update({ name, token });
+      return;
+    }
+
+    toast.error('Provide a valid name');
+  };
+
+  useEffect(() => {
+    if (result.isError) {
+      toast.error(result?.error?.data || 'Updating user failed');
+    }
+
+    if (result.isSuccess && result.data) {
+      dispatch(updateUser(result.data.data));
+      toast.success('Updated Successfully');
+    }
+  }, [result]);
+
   return (
     <StyledProfile>
       <img src={Avatar} alt='avatar' />
-      <form>
+      <form onSubmit={handleSubmit}>
         <InputControl>
           <label htmlFor='email'>Your name</label>
           <input
@@ -44,7 +73,7 @@ const DashboardProfile = () => {
           />
         </InputControl>
 
-        <Button secondary type='submit'>
+        <Button disabled={result.isLoading} secondary type='submit'>
           Save Changes
         </Button>
       </form>

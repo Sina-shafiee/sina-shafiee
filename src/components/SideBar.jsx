@@ -10,7 +10,7 @@ import { useRef } from 'react';
 
 const SideBar = () => {
   const { data: user } = useSelector((state) => state.user.user);
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const listRef = useRef(null);
   const footerRef = useRef(null);
 
@@ -119,7 +119,7 @@ const Logo = styled.div`
     display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
   }
   img {
-    width: ${({ isOpen }) => (isOpen ? '2.5rem' : '2rem')};
+    width: ${({ isOpen }) => (isOpen ? '2.5rem' : '2.5rem')};
     fill: ${({ theme: { colors }, primary }) =>
       (primary && colors.primary) || colors.text};
   }

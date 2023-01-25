@@ -19,6 +19,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import DashboardProjects from './pages/dashboard/DashboardProjects';
 import DashboardProfile from './pages/dashboard/DashboardProfile';
+import AddProject from './pages/dashboard/AddProject';
 
 const App = () => {
   const { state } = useAppContext();
@@ -38,6 +39,7 @@ const App = () => {
             <Route index element={<DashboardHome />} />
             <Route path='profile' element={<DashboardProfile />} />
             <Route path='projects' element={<DashboardProjects />} />
+            <Route path='add-project' element={<AddProject />} />
           </Route>
         </Route>
         <Route path='login' element={<Login />} />

@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const DashboardHome = () => {
@@ -7,6 +8,7 @@ const DashboardHome = () => {
   return (
     <StyledHome>
       <p>Welcome to your Dashboard {user?.name}</p>
+      <Link to='/dashboard/add-project'>Add project</Link>
     </StyledHome>
   );
 };
