@@ -19,10 +19,6 @@ const Grid = styled.div`
   min-height: 100vh;
 
   display: grid;
-  gap: 1rem;
+  /* gap: 1rem; */
   grid-template-columns: max-content 1fr;
-
-  & > div {
-    margin-bottom: 10vh;
-  }
 `;

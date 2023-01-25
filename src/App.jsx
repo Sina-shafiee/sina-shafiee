@@ -33,8 +33,8 @@ const App = () => {
         <Route path='about' element={<AboutUs />} />
         <Route path='projects' element={<Projects />} />
         <Route path='project/:id' element={<Project />} />
-        <Route path='dashboard' element={<Dashboard />}>
-          <Route element={<ProtectedRoute />}>
+        <Route element={<ProtectedRoute />}>
+          <Route path='dashboard' element={<Dashboard />}>
             <Route index element={<DashboardHome />} />
             <Route path='profile' element={<DashboardProfile />} />
             <Route path='projects' element={<DashboardProjects />} />

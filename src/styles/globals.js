@@ -8,6 +8,10 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     box-sizing: border-box;
   }
+  html {
+    height: fill-available;
+    height: -webkit-fill-available;
+  }
 
   body {
     background-color: ${({ theme: { colors } }) => colors.bodyBg};
@@ -17,6 +21,9 @@ export const GlobalStyles = createGlobalStyle`
     font-weight: 400;
     transition: all 0.3s linear;
     overflow-x: hidden;
+    min-height: 100vh;
+    min-height: fill-available;
+    min-height: -webkit-fill-available;
 
     @media (min-width: ${({ theme: { breakPoints } }) => breakPoints.md}) {
       font-size: 1.1rem;

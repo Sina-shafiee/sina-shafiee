@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { useLoginMutation } from '../store/auth/authApi';
 import { useNavigate } from 'react-router';
+import { Header, Footer } from '../components';
 
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { ImSpinner8 } from 'react-icons/im';
@@ -31,7 +32,7 @@ const Login = () => {
 
   useEffect(() => {
     if (result.isError) {
-      toast.error(result.error.data.message);
+      toast.error(result?.error?.data?.message || 'Login failed');
     }
 
     if (result.data && result.isSuccess) {
@@ -54,51 +55,55 @@ const Login = () => {
   };
 
   return (
-    <StyledForm
-      onSubmit={handleSubmit}
-      style={{ display: 'flex', flexDirection: 'column' }}
-    >
-      <InputControl>
-        <label htmlFor='email'>Enter your email</label>
-        <input
-          id='email'
-          type='email'
-          name='email'
-          value={email}
-          onBlur={(e) => (e.target.placeholder = 'Your email')}
-          onFocus={(e) => (e.target.placeholder = '')}
-          placeholder='Your email'
-          onChange={handleInputChange}
-        />
-      </InputControl>
-      <InputControl>
-        <label htmlFor='email'>Enter your email</label>
-        <PassInput>
+    <>
+      <Header />
+      <StyledForm
+        onSubmit={handleSubmit}
+        style={{ display: 'flex', flexDirection: 'column' }}
+      >
+        <InputControl>
+          <label htmlFor='email'>Enter your email</label>
           <input
-            type={showPass ? 'text' : 'password'}
-            name='password'
-            value={password}
-            onBlur={(e) => (e.target.placeholder = 'Your password')}
+            id='email'
+            type='email'
+            name='email'
+            value={email}
+            onBlur={(e) => (e.target.placeholder = 'Your email')}
             onFocus={(e) => (e.target.placeholder = '')}
-            id='password'
-            placeholder='Your password'
+            placeholder='Your email'
             onChange={handleInputChange}
           />
-          <button type='button' onClick={() => setShowPass((prev) => !prev)}>
-            {showPass ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
-          </button>
-        </PassInput>
-      </InputControl>
-      <SubmitBtn primary type='submit'>
-        {result.isLoading ? (
-          <Spinner>
-            <ImSpinner8 />
-          </Spinner>
-        ) : (
-          'Login'
-        )}
-      </SubmitBtn>
-    </StyledForm>
+        </InputControl>
+        <InputControl>
+          <label htmlFor='email'>Enter your email</label>
+          <PassInput>
+            <input
+              type={showPass ? 'text' : 'password'}
+              name='password'
+              value={password}
+              onBlur={(e) => (e.target.placeholder = 'Your password')}
+              onFocus={(e) => (e.target.placeholder = '')}
+              id='password'
+              placeholder='Your password'
+              onChange={handleInputChange}
+            />
+            <button type='button' onClick={() => setShowPass((prev) => !prev)}>
+              {showPass ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+            </button>
+          </PassInput>
+        </InputControl>
+        <SubmitBtn primary type='submit'>
+          {result.isLoading ? (
+            <Spinner>
+              <ImSpinner8 />
+            </Spinner>
+          ) : (
+            'Login'
+          )}
+        </SubmitBtn>
+      </StyledForm>
+      <Footer />
+    </>
   );
 };
 

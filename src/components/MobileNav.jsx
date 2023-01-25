@@ -95,6 +95,8 @@ const List = styled.ul`
   }
 `;
 const ToggleContainer = styled.div`
+  position: sticky;
+  bottom: 2rem;
   display: flex;
   align-items: center;
   width: 100%;

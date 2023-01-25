@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export const Button = styled.button`
-  padding: 8px 24px;
+  padding: 10px 24px;
   font-size: inherit;
   border-radius: 8px;
   transition: color 0.1s linear, background-color 0.2s linear,
