@@ -1,11 +1,11 @@
 import styled, { keyframes } from 'styled-components';
 
-const Skeleton = ({ times, h, w }) => {
+const Skeleton = ({ times, h, w, minW }) => {
   const boxes = Array(times)
     .fill(0)
     .map((_, index) => {
       return (
-        <OuterDiv h={h} w={w} key={index}>
+        <OuterDiv h={h} w={w} minW={minW} key={index}>
           <InnerDiv></InnerDiv>
         </OuterDiv>
       );
@@ -28,8 +28,10 @@ const OuterDiv = styled.div`
   margin-bottom: 1rem;
   border-radius: 8px;
   overflow: hidden;
-  width: ${({ h }) => h};
-  height: ${({ w }) => w};
+  flex: 1;
+  width: ${({ w }) => (w ? w : 'auto')};
+  height: ${({ h }) => h};
+  min-width: ${({ minW }) => (minW ? minW : 'auto')};
 `;
 
 const InnerDiv = styled.div`

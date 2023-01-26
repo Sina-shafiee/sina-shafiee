@@ -3,7 +3,7 @@ const Project = () => {
   return (
     <>
       <Header />
-      <div>Project</div>;
+      <div>Project</div>
       <Footer />
     </>
   );

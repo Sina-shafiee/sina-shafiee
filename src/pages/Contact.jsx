@@ -4,7 +4,7 @@ const Contact = () => {
   return (
     <>
       <Header />
-      <div>Contact</div>;
+      <div>Contact</div>
       <Footer />
     </>
   );

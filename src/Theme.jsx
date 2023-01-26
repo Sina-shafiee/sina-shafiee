@@ -5,7 +5,7 @@ export const lightTheme = {
   bodyBg: '#FEFEFE',
   text: '#363537',
   primary: '#8E05C2',
-  sideBarBg: '#f5f5f5'
+  sideBarBg: '#fafafa'
 };
 
 // dark mode theme

@@ -43,6 +43,7 @@ const App = () => {
           </Route>
         </Route>
         <Route path='login' element={<Login />} />
+        <Route path='/projects/:slug' element={<Project />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
       <ToastContainer

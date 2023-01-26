@@ -3,7 +3,7 @@ const NotFound = () => {
   return (
     <>
       <Header />
-      <div>NotFound</div>;
+      <div>NotFound</div>
       <Footer />
     </>
   );
