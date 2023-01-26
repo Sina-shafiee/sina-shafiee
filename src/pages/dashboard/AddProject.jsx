@@ -1,13 +1,17 @@
 import { useEffect } from 'react';
-import { useRef } from 'react';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 import styled from 'styled-components';
 import { Button } from '../../components/styled/Button.styled';
+import { useAddProjectMutation } from '../../store/project/projectApi';
 
 const AddProject = () => {
   const [technologies, setTechnologies] = useState([]);
   const [tags, setTags] = useState([]);
   const [imagePath, setImagePath] = useState('');
+  const token = useSelector((state) => state.user.user.token);
+  const [sendData, result] = useAddProjectMutation();
 
   const [formData, setFormData] = useState({
     title: '',
@@ -18,10 +22,20 @@ const AddProject = () => {
     tag: ''
   });
 
+  const [links, setLinks] = useState({
+    github: '',
+    website: ''
+  });
+
   const { title, bio, desc, technology, isCompleted, tag } = formData;
+  const { github, website } = links;
 
   const handleInputChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleLinkChange = (e) => {
+    setLinks((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   // converting image to data url
@@ -31,6 +45,18 @@ const AddProject = () => {
     reader.onload = () => {
       setImagePath(reader.result);
     };
+  };
+
+  const handleTagDelete = (id) => {
+    setTags((prev) => {
+      return prev.filter((t) => t.id !== id);
+    });
+  };
+
+  const handleTechDelete = (id) => {
+    setTechnologies((prev) => {
+      return prev.filter((t) => t.id !== id);
+    });
   };
 
   useEffect(() => {
@@ -69,10 +95,11 @@ const AddProject = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (title && bio && desc && imagePath && isCompleted) {
+    if (title && bio && desc && imagePath && isCompleted && github && website) {
       const formattedTechnologies = technologies.map((tech) => tech.data);
       const formattedTags = tags.length ? tags.map((tech) => tech.data) : [];
       const formattedIsCompleted = isCompleted === 'false' ? false : true;
+      const formattedLinks = { github, website };
 
       const data = {
         title,
@@ -81,11 +108,20 @@ const AddProject = () => {
         technologies: formattedTechnologies,
         tags: formattedTags,
         isCompleted: formattedIsCompleted,
-        imageBlob: imagePath
+        imageBlob: imagePath,
+        links: formattedLinks
       };
-      console.log(data);
+      sendData({ data, token });
     }
   };
+
+  useEffect(() => {
+    if (result.data && result.isSuccess) {
+      console.log(result);
+
+      toast.success('project added');
+    }
+  }, [result]);
 
   return (
     <StyledForm onSubmit={handleSubmit}>
@@ -103,31 +139,35 @@ const AddProject = () => {
       </InputControl>
       <InputControl>
         <label htmlFor='bio'>Project bio</label>
-        <input
+        <textarea
           onChange={handleInputChange}
           value={bio}
           type='text'
           name='bio'
           id='bio'
           placeholder='Project bio'
-        />
+        ></textarea>
       </InputControl>
       <InputControl>
         <label htmlFor='desc'>Project description</label>
-        <input
+        <textarea
           onChange={handleInputChange}
           value={desc}
           type='text'
           name='desc'
           id='desc'
           placeholder='Project desc'
-        />
+        ></textarea>
       </InputControl>
       <InputControl>
         <label htmlFor='technology'>Project technologies</label>
         <div>
           {technologies.length
-            ? technologies.map((tech) => <p key={tech.id}>{tech.data}</p>)
+            ? technologies.map((tech) => (
+                <p onClick={() => handleTechDelete(tech.id)} key={tech.id}>
+                  {tech.data}
+                </p>
+              ))
             : null}
           <input
             type='text'
@@ -144,7 +184,11 @@ const AddProject = () => {
         <label htmlFor='tag'>Add tags</label>
         <div>
           {tags.length
-            ? tags.map((tag) => <p key={tag.id}>{tag.data}</p>)
+            ? tags.map((tag) => (
+                <p onClick={() => handleTagDelete(tag.id)} key={tag.id}>
+                  {tag.data}
+                </p>
+              ))
             : null}
           <input
             placeholder='tags'
@@ -155,6 +199,27 @@ const AddProject = () => {
             id='tag'
           />
         </div>
+      </InputControl>
+
+      <InputControl>
+        <label htmlFor=''>Github repo link</label>
+        <input
+          type='text'
+          onChange={handleLinkChange}
+          name='github'
+          id='github'
+          value={github}
+        />
+      </InputControl>
+      <InputControl>
+        <label htmlFor=''>Website link</label>
+        <input
+          type='text'
+          onChange={handleLinkChange}
+          value={website}
+          name='website'
+          id='website'
+        />
       </InputControl>
       <InputControl>
         <label htmlFor='isCompleted'>Completed ?</label>
@@ -172,7 +237,7 @@ const AddProject = () => {
       <InputControl>
         <input
           type='file'
-          accept='image/png, image/jpeg, image/png, image/svg+xml'
+          accept='image/png, image/jpeg, image/png'
           onChange={handleImageSelect}
           name='file'
           id='file'
@@ -248,5 +313,15 @@ export const InputControl = styled.div`
     border: 1px solid black;
     background-color: #fefefe;
     color: #010101;
+  }
+
+  & textarea {
+    resize: vertical;
+    border-radius: 4px;
+    padding: 0.8rem;
+    min-height: 100px;
+  }
+  & textarea[name='bio'] {
+    min-height: 50px;
   }
 `;
