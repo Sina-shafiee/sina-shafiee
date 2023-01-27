@@ -89,7 +89,7 @@ const StyledProfile = styled.section`
   width: 100%;
   height: 100%;
   /* padding: 1rem; */
-  grid-template-columns: repeat(auto-fill, minmax(200px, 400px));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 500px));
   img {
     width: 60%;
     align-self: center;

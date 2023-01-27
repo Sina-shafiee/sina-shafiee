@@ -9,7 +9,7 @@ export const Button = styled.button`
   border: 1px solid transparent;
 
   @media (min-width: ${({ theme: { breakPoints } }) => breakPoints.md}) {
-    padding: 10px 30px;
+    padding: 10px 20px;
   }
 
   ${({ light }) =>

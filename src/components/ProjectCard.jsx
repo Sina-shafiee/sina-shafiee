@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const ProjectCard = ({ image: { img_url }, title, technologies, _id }) => {
   return (
-    <Card>
+    <>
       <CardImage src={img_url} />
       <CardBody>
         <Link to={`/projects/${_id}`}>
@@ -15,20 +15,11 @@ const ProjectCard = ({ image: { img_url }, title, technologies, _id }) => {
           })}
         </div>
       </CardBody>
-    </Card>
+    </>
   );
 };
 
 export default ProjectCard;
-
-const Card = styled.article`
-  background-color: ${({ theme: { colors } }) => colors.sideBarBg};
-  height: 310px;
-  min-width: 300px;
-  flex: 1;
-  border-radius: 4px;
-  overflow: hidden;
-`;
 
 const CardImage = styled.img`
   object-fit: cover;

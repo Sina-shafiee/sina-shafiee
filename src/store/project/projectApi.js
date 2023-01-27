@@ -8,7 +8,7 @@ export const projectApi = createApi({
     // baseUrl: 'http://localhost:5000/api/projects',
     fetchFn: async (...args) => {
       // dev only
-      await pause(20000);
+      // await pause(20000);
       return fetch(...args);
     }
   }),

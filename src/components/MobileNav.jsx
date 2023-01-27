@@ -75,7 +75,6 @@ const Nav = styled.nav`
   background-color: ${({ theme: { colors } }) => colors.bodyBg};
 
   min-height: 100vh;
-  /* display: flex; */
   flex-direction: column;
   justify-content: space-between;
   max-width: 300px;

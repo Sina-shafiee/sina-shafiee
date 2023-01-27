@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router';
+import { Route, Routes, useLocation } from 'react-router';
 
 // styled component theme provider global styles and theme checker
 import Theme from './Theme';
@@ -20,32 +20,38 @@ import 'react-toastify/dist/ReactToastify.css';
 import DashboardProjects from './pages/dashboard/DashboardProjects';
 import DashboardProfile from './pages/dashboard/DashboardProfile';
 import AddProject from './pages/dashboard/AddProject';
+import { AnimatePresence } from 'framer-motion';
+import ScrollToTop from './utils/ScrollToTop';
 
 const App = () => {
   const { state } = useAppContext();
   const colors = checkTheme(state);
+  const location = useLocation();
 
   return (
     <Theme colors={colors}>
       <GlobalStyles />
-      <Routes>
-        <Route index element={<Home />} />
-        <Route path='contact' element={<Contact />} />
-        <Route path='about' element={<AboutUs />} />
-        <Route path='projects' element={<Projects />} />
-        <Route path='project/:id' element={<Project />} />
-        <Route element={<ProtectedRoute />}>
-          <Route path='dashboard' element={<Dashboard />}>
-            <Route index element={<DashboardHome />} />
-            <Route path='profile' element={<DashboardProfile />} />
-            <Route path='projects' element={<DashboardProjects />} />
-            <Route path='add-project' element={<AddProject />} />
+      <ScrollToTop />
+      <AnimatePresence mode='wait'>
+        <Routes key={location.pathname} location={location}>
+          <Route index element={<Home />} />
+          <Route path='contact' element={<Contact />} />
+          <Route path='about' element={<AboutUs />} />
+          <Route path='projects' element={<Projects />} />
+          <Route path='project/:id' element={<Project />} />
+          <Route element={<ProtectedRoute />}>
+            <Route path='dashboard' element={<Dashboard />}>
+              <Route index element={<DashboardHome />} />
+              <Route path='profile' element={<DashboardProfile />} />
+              <Route path='projects' element={<DashboardProjects />} />
+              <Route path='add-project' element={<AddProject />} />
+            </Route>
           </Route>
-        </Route>
-        <Route path='login' element={<Login />} />
-        <Route path='/projects/:slug' element={<Project />} />
-        <Route path='*' element={<NotFound />} />
-      </Routes>
+          <Route path='login' element={<Login />} />
+          <Route path='/projects/:slug' element={<Project />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
+      </AnimatePresence>
       <ToastContainer
         position='bottom-center'
         autoClose={3000}
