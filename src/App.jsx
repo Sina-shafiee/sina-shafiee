@@ -2,7 +2,7 @@ import { Route, Routes, useLocation } from 'react-router';
 
 // styled component theme provider global styles and theme checker
 import Theme from './Theme';
-import { GlobalStyles } from './styles/Globals';
+import { GlobalStyles } from './styles/globals';
 import checkTheme from './utils/checkTheme';
 
 // pages components
