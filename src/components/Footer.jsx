@@ -2,10 +2,9 @@ import styled from 'styled-components';
 import { FaFacebook, FaGithub, FaLinkedin, FaTelegram } from 'react-icons/fa';
 
 import { Button } from './styled/Button.styled';
-import { Container } from './styled/Container.styled';
 import { LogoContainer } from './styled/LogoContainer.styled';
 
-import SubScribeBg from '../assets/images/footer-bg.png';
+import SubScribeBg from '../assets/images/footer-bg.svg';
 
 const Footer = () => {
   const handleFormSubmit = (e) => {
@@ -62,11 +61,12 @@ const StyledFooter = styled.footer`
 
 const SubscribeContainer = styled.section`
   background-image: url(${SubScribeBg});
-  min-height: 300px;
+  /* min-height: 300px; */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
+  padding: 5rem;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -78,10 +78,10 @@ const SubscribeContainer = styled.section`
   }
 
   @media (min-width: ${({ theme: { breakPoints } }) => breakPoints.md}) {
-    min-height: 400px;
+    padding: 6rem;
   }
   @media (min-width: ${({ theme: { breakPoints } }) => breakPoints.xl}) {
-    min-height: 450px;
+    padding: 7rem;
   }
 `;
 

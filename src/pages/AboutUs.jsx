@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
-import { Header, Footer } from '../components';
-import { About } from '../components';
+import { Header, Footer, PageTitle, About } from '../components';
 
 const AboutUs = () => {
   return (
@@ -12,6 +11,7 @@ const AboutUs = () => {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5 }}
       >
+        <PageTitle title='ABOUT' />
         <About />
       </motion.div>
       <Footer />

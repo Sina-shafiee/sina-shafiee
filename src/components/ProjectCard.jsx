@@ -1,9 +1,24 @@
+import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const ProjectCard = ({ image: { img_url }, title, technologies, _id }) => {
+const ProjectCard = ({
+  image: { img_url },
+  title,
+  technologies,
+  _id,
+  index
+}) => {
   return (
-    <>
+    <Card
+      as={motion.div}
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 100 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.09 }}
+      layout
+    >
       <CardImage src={img_url} />
       <CardBody>
         <Link to={`/projects/${_id}`}>
@@ -15,11 +30,20 @@ const ProjectCard = ({ image: { img_url }, title, technologies, _id }) => {
           })}
         </div>
       </CardBody>
-    </>
+    </Card>
   );
 };
 
 export default ProjectCard;
+
+const Card = styled.article`
+  background-color: ${({ theme: { colors } }) => colors.sideBarBg};
+  height: 320px;
+  flex: 1 0 300px;
+  border-radius: 4px;
+  overflow: hidden;
+  max-width: 450px;
+`;
 
 const CardImage = styled.img`
   object-fit: cover;

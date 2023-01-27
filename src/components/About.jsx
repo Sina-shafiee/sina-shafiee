@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Container } from './styled/Container.styled';
 import { Flex } from './styled/flex.styled';
-
+import { motion } from 'framer-motion';
 import BioImg from '../assets/images/bio.png';
 import { Button } from './styled/Button.styled';
 
@@ -10,10 +10,23 @@ const About = () => {
     <StyledAbout>
       <Container>
         <Flex align='center' gap='4rem'>
-          <StyledImg src={BioImg} alt='bio' />
+          <StyledImg
+            as={motion.img}
+            initial={{ scale: 0.8, opacity: 0 }}
+            viewport={{ once: true }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1 }}
+            src={BioImg}
+            alt='bio'
+          />
           <Bio>
             <Title>A FEW WORDS ABOUT ME</Title>
-            <p>
+            <motion.p
+              initial={{ y: 100, opacity: 0 }}
+              viewport={{ once: true }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1 }}
+            >
               As a motivated and detail-oriented Junior Front-End Developer, I
               am passionate about creating clean, efficient code and building
               user-friendly applications. I have experience working in an Agile
@@ -21,8 +34,17 @@ const About = () => {
               collaboratively with cross-functional teams. I am always looking
               for opportunities to learn and stay up-to-date with the latest
               technologies and industry trends.
-            </p>
-            <Button secondary>DOWNLOAD CV</Button>
+            </motion.p>
+            <Button
+              as={motion.button}
+              initial={{ y: 50, opacity: 0 }}
+              viewport={{ once: true }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1 }}
+              secondary
+            >
+              DOWNLOAD CV
+            </Button>
           </Bio>
         </Flex>
       </Container>

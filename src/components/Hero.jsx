@@ -11,7 +11,7 @@ const Hero = () => {
           <Bio>
             <Hi>
               <p>HELLO</p>
-              <Line></Line>
+              <Line />
             </Hi>
             <Name>
               MY NAME IS <span>ALI SINA</span>{' '}
@@ -39,7 +39,7 @@ const StyledHero = styled.section`
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap-reverse;
-  margin: 5rem 0;
+  margin: 6rem 0;
   gap: 1rem;
 `;
 

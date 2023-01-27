@@ -5,47 +5,19 @@ import { useLoadProjectsQuery } from '../store/project/projectApi';
 import ProjectCard from './ProjectCard';
 import Skeleton from './Skeleton';
 import { Container } from './styled/Container.styled';
-import { Flex } from './styled/Flex.styled';
-import { AnimatePresence, motion } from 'framer-motion';
-
-const categories = [
-  { title: 'all', id: 1 },
-  { title: 'popular', id: 2 },
-  { title: 'upcoming', id: 3 }
-];
+import { motion, AnimatePresence } from 'framer-motion';
+import FilterCategory from './FilterCategory';
 
 const ProjectsList = () => {
-  const { data, isError, isLoading, isSuccess } = useLoadProjectsQuery();
-  const [projects, setProjects] = useState([]);
+  const { data, isError, isLoading } = useLoadProjectsQuery();
+  const [filtered, setFiltered] = useState([]);
   const [activeCategory, setActiveCategory] = useState('all');
 
   useEffect(() => {
-    if (data?.projects) {
-      setProjects(data.projects);
+    if (data && data.projects) {
+      setFiltered(data.projects);
     }
-  }, [isSuccess]);
-
-  const checkActive = (cate) => {
-    return cate === activeCategory;
-  };
-
-  const checkCategoryData = (e) => {
-    const category = e.target.value;
-    let filteredData = null;
-    if (category === 'popular') {
-      filteredData = data.projects.filter(
-        (p) => p.tags.indexOf('popular') !== -1
-      );
-      setProjects(filteredData);
-    } else if (category === 'upcoming') {
-      filteredData = data.projects.filter(
-        (p) => p.tags.indexOf('upcoming') !== -1
-      );
-      setProjects(filteredData);
-    } else {
-      setProjects(data.projects);
-    }
-  };
+  }, [data]);
 
   if (isLoading) {
     return (
@@ -67,112 +39,48 @@ const ProjectsList = () => {
 
   return (
     <Container>
-      <CategoryWrapper
-        as={motion.div}
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{
-          delay: 0.2,
-          x: { duration: 0.5 },
-          default: { ease: 'linear' }
-        }}
-      >
-        {categories.map(({ title, id }) => {
-          return (
-            <CategoryBtn
-              value={title}
-              key={id}
-              active={checkActive(title)}
-              onClick={(e) => {
-                checkCategoryData(e);
-                setActiveCategory(e.target.value);
-              }}
-            >
-              {title}
-            </CategoryBtn>
-          );
-        })}
-      </CategoryWrapper>
+      <FilterCategory
+        activeCategory={activeCategory}
+        setActiveCategory={setActiveCategory}
+        setFiltered={setFiltered}
+        projects={data.projects}
+      />
 
-      <Wrapper
-        as={motion.section}
-        initial='hidden'
-        animate='visible'
-        transition={{
-          delay: 0.5,
-          x: { duration: 1 },
-          default: { ease: 'linear' }
-        }}
-      >
-        <AnimatePresence mode='sync'>
-          {projects.length
-            ? projects.map((p) => {
-                return (
-                  <Card
-                    key={p._id}
-                    as={motion.div}
-                    initial={{ scale: 0, y: 20, opacity: 0.5 }}
-                    animate={{ scale: 1, y: 0, opacity: 1 }}
-                    exit={{ scale: 0, y: 20, opacity: 0.5 }}
-                    transition={{
-                      scale: { duration: 0.5 },
-                      y: { duration: 0.5 },
-                      opacity: { duration: 0.2 },
-                      default: { ease: 'linear' }
-                    }}
-                  >
-                    <ProjectCard {...p} />
-                  </Card>
-                );
-              })
-            : null}
+      <Wrapper as={motion.div} layout>
+        <AnimatePresence>
+          {filtered.length ? (
+            filtered.map((p, index) => (
+              <ProjectCard index={index} key={p._id} {...p} />
+            ))
+          ) : (
+            <ErrorEl>
+              <p>No Project in this category available</p>
+            </ErrorEl>
+          )}
         </AnimatePresence>
       </Wrapper>
-      {!projects.length ? (
-        <ErrorEl>
-          <p>No Project in this category for now</p>
-        </ErrorEl>
-      ) : null}
     </Container>
   );
 };
 
 export default ProjectsList;
 
-const CategoryWrapper = styled(Flex)`
-  gap: 2rem;
-`;
-
-const CategoryBtn = styled.button`
-  cursor: pointer;
-  text-transform: capitalize;
-  color: ${({ theme: { colors }, active }) =>
-    active ? colors.primary : colors.text};
-`;
-
 const Wrapper = styled.div`
-  display: flex;
+  display: grid;
   gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   flex-wrap: wrap;
   align-items: center;
   margin: 5rem 0;
 `;
 
-const Card = styled.article`
-  background-color: ${({ theme: { colors } }) => colors.sideBarBg};
-  height: 320px;
-  flex: 1 0 300px;
-  border-radius: 4px;
-  overflow: hidden;
-  max-width: 450px;
-`;
-
 const ErrorEl = styled.div`
-  min-height: 30vh;
+  min-height: 40vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10rem;
+  margin-bottom: 5rem;
+  grid-column: 1/4;
 `;
 
 const CardSkeleton = styled(Skeleton)`
