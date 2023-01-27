@@ -7,7 +7,7 @@ export const userApi = createApi({
     baseUrl: 'https://portfolio-backend-ten-iota.vercel.app/api/auth',
     fetchFn: async (...args) => {
       // dev only
-      await pause(2000);
+      // await pause(2000);
       return fetch(...args);
     }
   }),
