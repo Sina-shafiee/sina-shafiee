@@ -7,7 +7,7 @@ import MobileNav from './MobileNav';
 
 import { Container } from './styled/Container.styled';
 import { LogoContainer } from './styled/LogoContainer.styled';
-import { Flex } from './styled/flex.styled';
+import { Flex } from './styled/Flex.styled';
 import { Button } from './styled/Button.styled';
 
 import useAppContext from '../hooks/use-appContext';

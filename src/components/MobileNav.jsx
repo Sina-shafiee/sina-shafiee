@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { CiDark, CiLight } from 'react-icons/ci';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
