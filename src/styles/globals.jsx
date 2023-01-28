@@ -19,7 +19,7 @@ export const GlobalStyles = createGlobalStyle`
     font-family:  "Roboto", sans-serif;
     font-size: 1rem;
     font-weight: 400;
-    transition: all 0.3s linear;
+    transition: background-color 0.1s linear;
     overflow-x: hidden;
     min-height: 100vh;
     min-height: fill-available;
