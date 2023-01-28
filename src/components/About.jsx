@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Container } from './styled/Container.styled';
-import { Flex } from './styled/flex.styled';
+import { Flex } from './styled/Flex.styled';
 import { motion } from 'framer-motion';
 import BioImg from '../assets/images/bio.png';
 import { Button } from './styled/Button.styled';
