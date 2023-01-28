@@ -1,3 +1,3 @@
 export default (theme) => {
-  return theme === 'dark' ? { color: '#42C2FF' } : { color: '#8E05C2' };
+  return theme === 'dark' ? { color: '#0096FF' } : { color: '#8E05C2' };
 };
