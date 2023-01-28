@@ -80,7 +80,11 @@ const ErrorEl = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 5rem;
-  grid-column: 1/4;
+  grid-column: 1/2;
+
+  @media (min-width: ${({ theme: { breakPoints } }) => breakPoints.md}) {
+    grid-column: 1/4;
+  }
 `;
 
 const CardSkeleton = styled(Skeleton)`
