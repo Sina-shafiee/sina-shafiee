@@ -3,12 +3,12 @@ import emailjs from '@emailjs/browser';
 
 import styled, { keyframes } from 'styled-components';
 import { Button } from './styled/Button.styled';
-import ReCAPTCHA from 'react-google-recaptcha';
+// import ReCAPTCHA from 'react-google-recaptcha';
 import { toast } from 'react-toastify';
 import { ImSpinner8 } from 'react-icons/im';
 
 const ContactForm = () => {
-  const [disabled, setDisabled] = useState(true);
+  const [disabled, setDisabled] = useState(false);
   const [loading, setLoading] = useState(false);
   const form = useRef();
 
@@ -47,21 +47,19 @@ const ContactForm = () => {
   return (
     <StyledForm ref={form} onSubmit={sendEmail}>
       <InputControl>
-        <label htmlFor='user_name'>Your name</label>
         <input
           required
           minLength={4}
           maxLength={20}
           type='text'
-          placeholder='Name'
+          placeholder='Your Name'
           id='user_name'
           name='user_name'
         />
       </InputControl>
       <InputControl>
-        <label htmlFor='user_email'>Your email</label>
         <input
-          placeholder='Email'
+          placeholder='Your email'
           type='email'
           id='user_email'
           name='user_email'
@@ -69,20 +67,19 @@ const ContactForm = () => {
         />
       </InputControl>
       <InputControl>
-        <label htmlFor='name'>Your Message</label>
         <textarea
           required
           minLength={20}
           maxLength={100}
-          placeholder='Message'
+          placeholder='Your message'
           name='message'
           id='message'
         ></textarea>
       </InputControl>
-      <ReCAPTCHA
+      {/* <ReCAPTCHA
         sitekey='6LfUvTMkAAAAAK-SqHA6Og6EvOshdtpqSBNyF-nQ'
         onChange={onCaptchaChange}
-      />
+      /> */}
 
       <SubmitBtn primary type='submit'>
         {loading ? (
@@ -106,10 +103,14 @@ const SpinAnimation = keyframes`
 `;
 
 const StyledForm = styled.form`
-  min-width: 50%;
+  min-width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  @media (min-width: ${({ theme: { breakPoints } }) => breakPoints.lg}) {
+    min-width: 50%;
+  }
 `;
 
 const InputControl = styled.div`

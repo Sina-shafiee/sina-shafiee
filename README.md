@@ -1,21 +1,18 @@
-Hi there! ![](https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif)My name is Ali Sina shafiee
-====================================================================================================================================
+# Hi there! ![](https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif)My name is Ali Sina shafiee
 
-Frontend web developer
-----------------------
+## Frontend web developer
 
 I am a Junior Front End Developer with a passion for creating innovative and engaging user experiences. I am proficient in HTML, CSS, JavaScript, React and Redux. I am a creative problem-solver and enjoy working collaboratively to create amazing products. In my free time, I like to stay up to date on the latest web development trends and technologies. I am excited to continue to grow and develop my skills as a Front End Developer.
 
-* 🌍  I'm based in Shiraz, iran
-* 🖥️  See my portfolio at [https://www.sina-shafiee.vercel.app](http://www.sina-shafiee.vercel.app)
-* ✉️  You can contact me at [alisinashafieezada@gmail.com](mailto:alisinashafieezada@gmail.com)
-* 🧠  I'm learning node js
+- 🌍  I'm based in Shiraz, iran
+- 🖥️  See my portfolio at [https://www.sina-shafiee.ir](https://www.sina-shafiee.ir)
+- ✉️  You can contact me at [alisinashafieezada@gmail.com](mailto:alisinashafieezada@gmail.com)
+- 🧠  I'm learning node js
 
 <a href="https://www.github.com/sina-shafiee" target="_blank" rel="noreferrer"><img
 src="https://img.shields.io/github/followers/sina-shafiee?logo=github&style=for-the-badge&color=0891b2&labelColor=1c1917" /></a>
 
 ### Skills
-
 
 <p align="left">
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg" width="36" height="36" alt="JavaScript" /></a>
@@ -28,7 +25,6 @@ src="https://img.shields.io/github/followers/sina-shafiee?logo=github&style=for-
 <a href="https://mui.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/materialui-colored.svg" width="36" height="36" alt="Material UI" /></a>
 <a href="https://redux.js.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/redux-colored.svg" width="36" height="36" alt="Redux" /></a>
 </p>
-
 
 ### Socials
 

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import styled from 'styled-components';
 import { Header, Footer, PageTitle } from '../components';
 import ContactCard from '../components/ContactCard';
 import ContactForm from '../components/ContactForm';
@@ -17,10 +18,15 @@ const Contact = () => {
       >
         <PageTitle title='contact' />
         <Container>
-          <Flex gap='2rem' style={{ margin: '5rem 0' }}>
+          <ContactWrapper
+            dir='column'
+            align='center'
+            gap='2rem'
+            style={{ margin: '5rem 0' }}
+          >
             <ContactForm />
             <ContactCard />
-          </Flex>
+          </ContactWrapper>
         </Container>
       </motion.div>
       <Footer />
@@ -29,3 +35,9 @@ const Contact = () => {
 };
 
 export default Contact;
+
+const ContactWrapper = styled(Flex)`
+  @media (min-width: ${({ theme: { breakPoints } }) => breakPoints.lg}) {
+    flex-direction: row;
+  }
+`;
