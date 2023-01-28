@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import styled from 'styled-components';
-import { Flex } from './styled/flex.styled';
+import { Flex } from './styled/Flex.styled';
 
 const categories = [
   { title: 'all', id: 1 },
