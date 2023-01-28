@@ -1,5 +1,9 @@
 import { motion } from 'framer-motion';
-import { Header, Footer } from '../components';
+import { Header, Footer, PageTitle } from '../components';
+import ContactCard from '../components/ContactCard';
+import ContactForm from '../components/ContactForm';
+import { Container } from '../components/styled/Container.styled';
+import { Flex } from '../components/styled/Flex.styled';
 
 const Contact = () => {
   return (
@@ -11,7 +15,13 @@ const Contact = () => {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div>Contact</div>
+        <PageTitle title='contact' />
+        <Container>
+          <Flex gap='2rem' style={{ margin: '5rem 0' }}>
+            <ContactForm />
+            <ContactCard />
+          </Flex>
+        </Container>
       </motion.div>
       <Footer />
     </>
