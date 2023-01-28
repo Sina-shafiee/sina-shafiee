@@ -13,10 +13,10 @@ const ProjectCard = ({
     <Card
       as={motion.div}
       initial={{ opacity: 0, y: 100 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 100 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.09 }}
+      transition={{ duration: 0.5 }}
       layout
     >
       <CardImage src={img_url} />

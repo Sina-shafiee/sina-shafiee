@@ -61,7 +61,7 @@ const StyledAbout = styled.section`
 const Bio = styled.div`
   & > p {
     text-align: start;
-    margin: 2rem 0;
+    margin: 2rem 0 1rem 0;
   }
 `;
 
