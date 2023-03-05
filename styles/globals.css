@@ -20,6 +20,15 @@ body {
   font-weight: 400;
 }
 
+a,
+button {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  font: inherit;
+}
+
 .container {
   max-width: 1000px;
   margin: 0 auto;

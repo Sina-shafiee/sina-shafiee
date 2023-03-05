@@ -1,10 +1,11 @@
+import Bio from '@/components/Bio/Bio';
 import Page from '@/components/page/Page';
 
 const Home = () => {
   return (
     <>
       <Page title='Home'>
-        <h1>Home</h1>
+        <Bio />
       </Page>
     </>
   );
