@@ -10,7 +10,7 @@ const Navbar = ({ links }: NavbarProps) => {
   const isLinkActive = (path: string): boolean => router.pathname === path;
 
   return (
-    <nav className='container'>
+    <nav>
       <ul className={styles.list}>
         {links.map((link) => {
           const { id, path, title } = link;
