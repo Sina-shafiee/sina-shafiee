@@ -1,0 +1,20 @@
+.list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 2rem 0;
+  gap: 1.5rem;
+}
+
+.link {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.9em;
+  font-weight: 300;
+  padding-bottom: 0.2rem;
+  border-bottom-color: var(--color-primary);
+}
+
+.link:hover {
+  border-bottom: 2px solid var(--color-primary);
+}
