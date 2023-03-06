@@ -3,8 +3,13 @@ const Bio = () => {
   return (
     <section className={styles.wrapper}>
       <p className={styles.paragraph}>
-        I&apos;m <strong>Sina</strong> a self-taught React & Nextjs developer
-        who loves to build things.
+        I&apos;m <strong>Sina</strong> a self-taught <strong>React</strong> &{' '}
+        <strong>Nextjs</strong> developer who loves to build things.
+      </p>
+      <p className={styles.paragraph}>
+        Proficient in developing responsive websites using{' '}
+        <strong>Material UI,</strong> <strong>Tailwind Css</strong> and{' '}
+        <strong>Styled-Components</strong>..
       </p>
       <p className={styles.paragraph}>
         You can follow me on{' '}
@@ -13,7 +18,7 @@ const Bio = () => {
         </strong>{' '}
         where I share random ideas or memes.
       </p>
-      <p>
+      <p className={styles.paragraph}>
         Or you can send me an email via{' '}
         <strong>
           <a href='mailto:alisinashafieezada@gmail.com'>

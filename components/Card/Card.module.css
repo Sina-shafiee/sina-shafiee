@@ -1,0 +1,40 @@
+.cardsWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 400px));
+  gap: 2rem;
+  justify-content: center;
+  padding: 1.5rem 0;
+}
+
+@media screen and (min-width: 680px) {
+  .cardsWrapper {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(300px, calc(100% / 2 - 2rem))
+    );
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .cardsWrapper {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(320px, calc(1000px / 2 - 2rem))
+    );
+  }
+}
+
+.card {
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 0px 0px 1px;
+}
+
+.cardBody {
+  padding: 2rem;
+}
+.cardBody h4 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-transform: capitalize;
+}

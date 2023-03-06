@@ -7,3 +7,9 @@ export type Project = {
   technologies: string[];
   _id: string;
 };
+
+export type StrippedProject = {
+  img: string;
+  title: string;
+  id: string;
+};

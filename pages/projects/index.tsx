@@ -1,30 +1,28 @@
+import CardList from '@/components/Card/CardList';
 import Page from '@/components/page/Page';
 import { getProjects } from '@/lib/projects';
-import { Project } from '@/types/project';
+
+import { StrippedProject } from '@/types/project';
+import { GetStaticProps } from 'next';
 
 type ProjectsProps = {
-  projects: Project[];
+  projects: StrippedProject[];
 };
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const projects = await getProjects();
   return {
     props: {
       projects
-    }
+    },
+    revalidate: 300
   };
 };
 
 const Projects = ({ projects }: ProjectsProps) => {
   return (
     <Page title='Projects'>
-      {projects.map((project) => {
-        return (
-          <div key={project._id}>
-            <h2>{project.title}</h2>
-          </div>
-        );
-      })}
+      <CardList data={projects} />
     </Page>
   );
 };

@@ -1,12 +1,11 @@
 .hero {
-  padding: 5rem 0;
+  padding: 6rem 0;
 }
 
 .name {
-  font-size: 4.5em;
+  font-size: 2.8em;
   font-weight: 200;
   margin-bottom: 1rem;
-  letter-spacing: 1px;
 }
 
 .name strong {
@@ -14,7 +13,21 @@
 }
 
 .title {
-  font-size: 1.4em;
+  font-size: 1.2em;
   font-weight: 400;
   margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 540px) {
+  .name {
+    font-size: 4em;
+  }
+  .title {
+    font-size: 1.5em;
+  }
+}
+@media screen and (min-width: 740px) {
+  .name {
+    font-size: 4.5em;
+  }
 }
