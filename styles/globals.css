@@ -1,0 +1,55 @@
+@import url('./normalize.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700;800;900&display=swap');
+
+:root {
+  --color-primary: #2563eb;
+  --text-primary-color: #010101;
+  --background-primary-color: #fefefe;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-primary-color);
+  color: var(--text-primary-color);
+  font-weight: 400;
+}
+
+a,
+button {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  font: inherit;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+* {
+  scrollbar-width: auto;
+  scrollbar-color: var(--text-primary-color);
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--background-primary-color);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--text-primary-color);
+  border-radius: 10px;
+  border: 0px solid var(--background-primary-color);
+}
