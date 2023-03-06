@@ -13,3 +13,17 @@ export type StrippedProject = {
   title: string;
   id: string;
 };
+
+export type SingleProjectType = {
+  image: {
+    img_id: string;
+    img_url: string;
+  };
+  links: {
+    github: string;
+    website: string;
+  };
+  title: string;
+  desc: string;
+  _id: string;
+};

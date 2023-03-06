@@ -1,5 +1,5 @@
 import CardList from '@/components/Card/CardList';
-import Page from '@/components/page/Page';
+import MainLayout from '@/components/Layout/MainLayout';
 import { getProjects } from '@/lib/projects';
 
 import { StrippedProject } from '@/types/project';
@@ -21,9 +21,9 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Projects = ({ projects }: ProjectsProps) => {
   return (
-    <Page title='Projects'>
+    <MainLayout title='Projects'>
       <CardList data={projects} />
-    </Page>
+    </MainLayout>
   );
 };
 

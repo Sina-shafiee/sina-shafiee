@@ -12,7 +12,8 @@ const CardItem = ({ project: { img, title, id } }: CardItemProps) => {
           src={img}
           alt={title}
           width={320}
-          height={220}
+          height={240}
+          priority
           style={{
             backgroundSize: 'cover',
             width: '100%',

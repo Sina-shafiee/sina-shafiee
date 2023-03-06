@@ -1,12 +1,12 @@
 import Bio from '@/components/Bio/Bio';
-import Page from '@/components/page/Page';
+import MainLayout from '@/components/Layout/MainLayout';
 
 const Home = () => {
   return (
     <>
-      <Page title='Home'>
+      <MainLayout title='Home'>
         <Bio />
-      </Page>
+      </MainLayout>
     </>
   );
 };
