@@ -10,7 +10,8 @@ const ProjectBio = (props: ProjectBioProps) => {
           src='/project-icon-placeholder.svg'
           width={120}
           height={120}
-          alt='icon'
+          alt='avatar'
+          className={styles.avatar}
         />
         <section className={styles.title}>
           <h2>{props.title}</h2>
@@ -27,6 +28,11 @@ const ProjectBio = (props: ProjectBioProps) => {
           title={props.title}
           width={1000}
           height={800}
+          style={{
+            backgroundSize: 'cover',
+            width: '100%',
+            height: 'auto'
+          }}
         />
       </section>
     </section>

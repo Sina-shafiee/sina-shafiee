@@ -2,7 +2,10 @@
   padding-top: 6rem;
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 1rem;
+}
+.avatar {
+  display: none;
 }
 
 .title {
@@ -13,7 +16,7 @@
 
 .title h2 {
   font-weight: 500;
-  font-size: 3em;
+  font-size: 2em;
   text-transform: capitalize;
   line-height: 1;
 }
@@ -25,11 +28,29 @@
 
 .description {
   padding: 1rem 0;
-  font-size: 4em;
+  font-size: 2em;
   font-weight: 200;
 }
 
 .imageWrapper {
   width: 100%;
   padding: 2rem 0;
+}
+
+@media screen and (min-width: 620px) {
+  .avatar {
+    display: block;
+  }
+  .title h2 {
+    font-size: 3em;
+  }
+  .description {
+    font-size: 4em;
+  }
+}
+
+@media screen and (min-width: 760px) {
+  .wrapper {
+    gap: 3rem;
+  }
 }
