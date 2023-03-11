@@ -1,7 +1,7 @@
 export const NavLinks = [
   { title: 'About', path: '/', id: 1 },
   { title: 'Projects', path: '/projects', id: 2 },
-  { title: 'Resume', path: '/Resume.pdf', id: 3 }
+  { title: 'Resume', path: '/Sina-Shafiee-Resume.pdf', id: 3 }
 ];
 
 export const userDetail = {

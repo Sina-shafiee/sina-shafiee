@@ -1,10 +1,10 @@
 import Head from 'next/head';
 import Navbar from '../Navbar/Navbar';
-import { PageProps } from './Page.types';
+import type { LayoutProps } from './Layout.types';
 import { userDetail, NavLinks } from '@/data';
 import Hero from '../Hero/Hero';
 
-const Page = ({ title, children }: PageProps) => {
+const Page = ({ title, children }: LayoutProps) => {
   const pageTitle = `${title} - Sina Shafiee`;
   return (
     <>

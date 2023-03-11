@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type PageProps = {
+export type LayoutProps = {
   title: string;
   children: React.ReactNode;
 };

@@ -1,10 +1,10 @@
 import Head from 'next/head';
-import { PageProps } from './Page.types';
+import type { LayoutProps } from './Layout.types';
 import { useRouter } from 'next/router';
 import Button from '../Button/Button';
 import ArrowBack from '../Icons/ArrowBack/ArrowBack';
 
-const ProjectLayout = ({ title, children }: PageProps) => {
+const ProjectLayout = ({ title, children }: LayoutProps) => {
   const pageTitle = `${title} - Sina Shafiee`;
 
   const router = useRouter();

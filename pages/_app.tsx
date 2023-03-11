@@ -8,9 +8,9 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <NextNProgress
         color='#29D'
-        startPosition={0.3}
-        stopDelayMs={200}
-        height={2}
+        startPosition={0.8}
+        stopDelayMs={10}
+        height={4}
         showOnShallow={true}
       />
       <Component {...pageProps} />
