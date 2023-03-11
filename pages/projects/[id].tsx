@@ -1,6 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 
-import Page from '@/components/Layout/MainLayout';
 import { getProjectIds, getSingleProject } from '@/lib/projects';
 
 import { SingleProjectType } from '@/types/project';
