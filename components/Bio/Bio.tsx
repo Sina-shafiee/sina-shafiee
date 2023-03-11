@@ -21,9 +21,7 @@ const Bio = () => {
       <p className={styles.paragraph}>
         Or you can send me an email via{' '}
         <strong>
-          <a href='mailto:alisinashafieezada@gmail.com'>
-            alisinashafieezada@gmail.com
-          </a>
+          <a href='mailto:sinashafiee@hotmail.com'>sinashafiee@hotmail.com</a>
         </strong>
         , I would be happy to connect.
       </p>
