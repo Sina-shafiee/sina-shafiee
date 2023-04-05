@@ -1,8 +1,9 @@
-# Hi there! ![](https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif)My name is Ali Sina shafiee
+# Hi there! ![](https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif)
 
-## Frontend web developer
+### My name is Ali Sina shafiee
+#### Frontend web developer
 
-I am a Junior Front End Developer with a passion for creating innovative and engaging user experiences. I am proficient in HTML, CSS, JavaScript, React and Redux. I am a creative problem-solver and enjoy working collaboratively to create amazing products. In my free time, I like to stay up to date on the latest web development trends and technologies. I am excited to continue to grow and develop my skills as a Front End Developer.
+Passionate about learning new things and hearing other people's experiences, such as their work issues and challenges. Also interested in anime and online games.
 
 - 🖥️  See my portfolio at [https://www.sina-shafiee.ir](https://www.sina-shafiee.ir)
 - ✉️  You can contact me at [alisinashafieezada@gmail.com](mailto:alisinashafieezada@gmail.com)
