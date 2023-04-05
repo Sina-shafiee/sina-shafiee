@@ -4,10 +4,9 @@
 
 I am a Junior Front End Developer with a passion for creating innovative and engaging user experiences. I am proficient in HTML, CSS, JavaScript, React and Redux. I am a creative problem-solver and enjoy working collaboratively to create amazing products. In my free time, I like to stay up to date on the latest web development trends and technologies. I am excited to continue to grow and develop my skills as a Front End Developer.
 
-- 🌍  I'm based in Shiraz, iran
 - 🖥️  See my portfolio at [https://www.sina-shafiee.ir](https://www.sina-shafiee.ir)
 - ✉️  You can contact me at [alisinashafieezada@gmail.com](mailto:alisinashafieezada@gmail.com)
-- 🧠  I'm learning node js
+- 🧠  I'm learning next js
 
 <a href="https://www.github.com/sina-shafiee" target="_blank" rel="noreferrer"><img
 src="https://img.shields.io/github/followers/sina-shafiee?logo=github&style=for-the-badge&color=0891b2&labelColor=1c1917" /></a>
