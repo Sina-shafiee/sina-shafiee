@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  *::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  *::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    @apply bg-foreground rounded-lg border-0;
+  }
+  .project-list-wrapper {
+    @apply grid gap-8 justify-center py-6 grid-cols-1 largeTablet:grid-cols-projects;
+  }
+  .project-structured-text {
+    @apply mt-8 text-[1.4rem] font-normal capitalize smallTablet:text-[3rem] largeTablet:text-[4rem] largeTablet:leading-[1.1] largeTablet:font-extralight;
+  }
+  .project-structured-text a {
+    @apply text-primary;
+  }
+  .dast-content a {
+    @apply underline;
+  }
+  .dast-content p {
+    @apply mb-1 text-base smallDesktop:text-lg;
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply max-w-[1024px] mx-auto px-4 smallTablet:px-8;
+  }
+}
