@@ -1,0 +1,4 @@
+{
+  "*.{tsx,ts, mdx}": ["pnpm run lint", "pnpm run fmt"],
+  "*.md": "pnpm run fmt"
+}
