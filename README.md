@@ -3,7 +3,7 @@
 
 - 🌱 I’m currently learning **UI & UX**
 
-- 👨‍💻 All of my projects are available at [sina-is.online](sina-is.online)
+- 👨‍💻 All of my projects are available at [sina-is.online](https://sina-is.online)
 
 - 💬 Ask me about **javascript, reactjs, nextjs & typescript**
 
