@@ -51,4 +51,4 @@ jobs:
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:latest
             docker stop portfolio_container || true
             docker rm portfolio_container || true
-            docker run -d --name portfolio_container -p 3000:3000 -v $HOME/env/portfolio/.env:/app/.env ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:latest
+            docker run -d --restart unless-stopped --name portfolio_container -p 3000:3000 -v $HOME/env/portfolio/.env:/app/.env ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:latest
