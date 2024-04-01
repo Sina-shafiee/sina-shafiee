@@ -27,8 +27,7 @@ RUN \
     else echo "Lockfile not found." && exit 1; \
     fi
 
-# FROM --platform=linux/amd64 gcr.io/distroless/nodejs20-debian12 AS runner
-FROM --platform=linux/amd64 node:20-alpine AS runner
+FROM --platform=linux/amd64 gcr.io/distroless/nodejs20-debian12 AS runner
 WORKDIR /app
 
 ENV NODE_ENV production
