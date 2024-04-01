@@ -20,6 +20,8 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 ARG UPSTASH_REDIS_REST_URL
 ARG UPSTASH_REDIS_REST_TOKEN
+# ENV UPSTASH_REDIS_REST_URL ${UPSTASH_REDIS_REST_URL}
+# ENV UPSTASH_REDIS_REST_TOKEN ${UPSTASH_REDIS_REST_TOKEN}
 RUN \
     if [ -f yarn.lock ]; then yarn build; \
     elif [ -f package-lock.json ]; then npm run build; \
