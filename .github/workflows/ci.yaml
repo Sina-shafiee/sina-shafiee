@@ -49,6 +49,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:latest
-            docker stop your_container_name || true
-            docker rm your_container_name || true
+            docker stop portfolio_container || true
+            docker rm portfolio_container || true
             docker run -d --name portfolio_container -p 3000:3000 -v $HOME/env/portfolio/.env:/app/.env ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:latest
