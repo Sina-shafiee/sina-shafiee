@@ -23,10 +23,8 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v4
         with:
-          context: .
-          dockerfile: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:latest
           secrets: |
