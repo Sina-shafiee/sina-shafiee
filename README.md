@@ -1,9 +1,9 @@
 <h1 align="center">Hi 👋, I'm Sina Shafiee</h1>
-<h3 align="center">A passionate frontend developer</h3>
+<h3 align="center">Frontend Developer</h3>
 
-- 🌱 I’m currently learning **UI & UX**
+- 🌱 I’m currently learning **Python**
 
-- 👨‍💻 All of my projects are available at [sina-is.online](https://sina-is.online)
+- 👨‍💻 All of my projects are available at [sinashafiee.info](https://sinashafiee.info)
 
 - 💬 Ask me about **javascript, reactjs, nextjs & typescript**
 
