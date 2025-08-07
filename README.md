@@ -11,7 +11,7 @@
 ###
 
 <p align="left">
-🔗 Check out my portfolio <a href="sinashafiee.info">sinashafiee.info</a>
+🔗 Check out my portfolio <a href="https://www.sinashafiee.info">sinashafiee.info</a>
 <br>
 ✨ Creating bugs since 2022
 <br>
