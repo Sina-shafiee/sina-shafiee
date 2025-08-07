@@ -15,7 +15,7 @@
 <br>
 ✨ Creating bugs since 2022
 <br>
-📚 I'm currently learning python 
+📚 I'm currently learning php & Laravel 
 <br>
 ✉️ contact me with <a href="mailto:sinashafiee@hotmail.com">sinashafiee@hotmail.com</a></p>
 
