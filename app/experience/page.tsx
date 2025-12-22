@@ -23,7 +23,7 @@ const timelineData: TimelineEntry[] = [
       "Mentored students in a nine-month front-end development bootcamp, covering HTML, CSS, JavaScript, and React, while guiding them in building portfolio-level applications and supporting their transition into freelancing or contributing to open-source projects.",
   },
   {
-    date: "April. 2023 - Present",
+    date: "April. 2023 - July. 2025",
     title: "Elbar",
     jobDescription: "Front-end Developer",
     type: "Remote",
